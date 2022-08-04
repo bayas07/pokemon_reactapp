@@ -17,7 +17,7 @@ const CardStat = ({ stats, id }) => {
               id={`${item.stat.name}-${id}`}
               value={item.base_stat}
               min="0"
-              max="100"
+              max="120"
             >
               {item.base_stat} out of 100
             </meter>
