@@ -1,0 +1,25 @@
+.searchbar-container {
+    position: relative;
+}
+.searchbar-container input[type="text"] {
+  width: 600px;  
+  padding: 15px 20px;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+.searchbar-container input[type="text"]::placeholder {
+  color: grey;
+  opacity: 0.5;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+.search-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 17px;
+  cursor: pointer;
+}
