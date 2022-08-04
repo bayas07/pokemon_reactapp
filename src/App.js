@@ -1,10 +1,19 @@
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import "./App.css";
+import CardList from "./components/card/CardList";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: "cardData/fetchRequested" });
+  }, []);
+
   return (
-    <div className="App">
-     <h1>Welcome to pokemon page</h1>
-    </div>
+    <main className="App">
+      <CardList />
+    </main>
   );
 }
 

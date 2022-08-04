@@ -1,0 +1,44 @@
+.card-stats {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #393e46;
+    position: absolute;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 400;
+    padding: 0 30px 0 10px;
+    top: -250px;
+    text-transform: capitalize;
+    transition: 0.5s;
+  }
+  .card-stats-item {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-stats-item meter {
+    width: 90px;
+    height: 12px;
+    transition: 2s;
+    align-self: center;
+  }
+  .card-stats-item meter::-webkit-meter-bar {
+    background: none;
+    background-color: #f19686;
+    border: none;
+    border-radius: 0;
+  }
+  .card-stats-item meter::-webkit-meter-optimum-value {
+    background-color: #d14d36;
+  }
+  .card-stats-item-name {
+    width: 40px;
+  }
+  .card-stats-item-value {
+    width: 20px;
+    align-self: center;
+    text-align: right;
+  }
+  

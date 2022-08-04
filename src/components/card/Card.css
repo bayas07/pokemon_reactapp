@@ -1,0 +1,167 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 0px grey;
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+.card > div {
+  border-radius: 10px;
+}
+.card-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  height: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  z-index: 11;
+}
+.card-item:hover + .card-stats {
+  top: 0px;
+}
+.card-stats:hover {
+  top: 0px;
+}
+
+.grass {
+  background-color: #7eb998;
+}
+.grass-image-bg {
+  background-color: #bfdccc;
+}
+.fire {
+  background-color: #f09990;
+}
+.fire-image-bg {
+  background-color: #f8ccc8;
+}
+.water {
+  background-color: #8ab7e2;
+}
+.water-image-bg {
+  background-color: #c5dbf1;
+}
+.bug {
+  background-color: #7da668; 
+}
+.bug-image-bg {
+  background-color: #a4de91;
+}
+.normal {
+  background-color: #b6b9c1;
+}
+.normal-image-bg {
+  background-color: #d2d5d8;
+}
+.poison {
+  background-color: #a874a4;
+}
+.poison-image-bg {
+  background-color: #cdb0df;
+}
+.electric {
+  background-color: #D4A143;
+}
+.electric-image-bg {
+  background-color: #D2B466;
+}
+.ground {
+  background-color: #AF8955;
+}
+.ground-image-bg {
+  background-color: #CCA66F;
+}
+.fairy {
+  background-color: #B17285;
+}
+.fairy-image-bg {
+  background-color: #D09DBC;
+}
+.fighting {
+  background-color: #CF5C45;
+}
+.fighting-image-bg {
+  background-color: #D67873;
+}
+.psychic {
+  background-color: #AF748A;
+}
+.psychic-image-bg {
+  background-color: #D8ADC4;
+}
+.rock {
+  background-color: #C28B66;
+}
+.rock-image-bg {
+  background-color: #CDA363;
+}
+.ghost {
+  background-color: #8463A2;
+}
+.ghost-image-bg {
+  background-color: #B491C2;
+}
+.ice {
+  background-color: #65C0E9;
+}
+.ice-image-bg {
+  background-color: #A8E2FA;
+}
+.dragon {
+  background-color: #596397;
+}
+.dragon-image-bg {
+  background-color: #7C8AC4;
+}
+.steel {
+  background-color: #6A7F96;
+}
+.steel-image-bg {
+  background-color: #919BB0;
+}
+.dark {
+  background-color: #927763;
+}
+.dark-image-bg {
+  background-color: #CBA78D;
+}
+.flying {
+  background-color: #544E8F;
+}
+.flying-image-bg {
+  background-color: #BFC2DE;
+}
+.card-image-container {
+  width: 120px;
+  min-height: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.card-image-container img {
+  width: 100%;
+  position: relative;
+  animation: bounce 0.3s ease-out infinite;
+}
+.card-index {
+  background-color: #6c7d73;
+  margin: 0 auto;
+  padding: 3px 5px;
+  border-radius: 8px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(1px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
