@@ -16,6 +16,10 @@ const cardDataSlice = createSlice({
     },
     fetchSuccess: (state, { payload }) => {
       state.loading = false;
+      state.cardData = payload;
+    },
+    fetchMoreSuccess: (state, { payload }) => {
+      state.loading = false;
       state.cardData = [...state.cardData, ...payload];
     },
     fetchRejected: (state) => {
