@@ -13,7 +13,7 @@ const Card = ({ cardData, lastRef }) => {
             <div
               className={`card-image-container ${card.types[0].type.name}-image-bg`}
             >
-              <img src={card.sprites.other["official-artwork"].front_default} />
+              <img src={card.sprites.other["official-artwork"].front_default} alt={card.name} />
             </div>
             <div className="card-index">#{card.id}</div>
             <div>{card.name}</div>
@@ -29,7 +29,7 @@ const Card = ({ cardData, lastRef }) => {
           <div
             className={`card-image-container ${card.types[0].type.name}-image-bg`}
           >
-            <img src={card.sprites.other["official-artwork"].front_default} />
+            <img src={card.sprites.other["official-artwork"].front_default} alt={card.name}/>
           </div>
           <div className="card-index">#{card.id}</div>
           <div>{card.name}</div>
