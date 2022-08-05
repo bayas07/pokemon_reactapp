@@ -1,12 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import CardList from "../../components/card/CardList";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch({ type: "cardData/fetchRequested" });
-  }, []);
   return <CardList />;
 };
 
