@@ -9,7 +9,7 @@ const SearchedCard = () => {
   console.log(searchedCardData, "searchedCardData");
 
   return (
-    <div className="search-card-list">
+    <div className="search-card-list card-list">
       <Card cardData={searchedCardData} />
     </div>
   );

@@ -29,7 +29,7 @@ const SearchBar = () => {
       <input
         type="text"
         aria-label="search"
-        placeholder="Search your pokemon here"
+        placeholder="Search pokemon"
         onChange={onChangeHandler}
         onKeyPress={onKeyPressHandler}
         value={searchInput}

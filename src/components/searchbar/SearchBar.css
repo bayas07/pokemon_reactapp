@@ -1,12 +1,14 @@
 .searchbar-container {
-    position: relative;
+  position: absolute;
+  width: 60%;
+  left: 0px;
 }
 .searchbar-container input[type="text"] {
-  width: 600px;  
-  padding: 15px 20px;
+  width: 100%;
+  padding: 10px 20px;
   border-radius: 3px;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: lowercase;
 }
@@ -20,6 +22,27 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  padding: 17px;
+  font-size: 14px;
+  padding: 11px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .searchbar-container input[type="text"] {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+  .search-icon {
+    padding: 13px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .searchbar-container input[type="text"] {
+    padding: 15px 20px;
+  }
+  .search-icon {
+    padding: 17px;
+  }
 }
