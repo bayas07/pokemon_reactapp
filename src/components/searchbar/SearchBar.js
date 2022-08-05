@@ -1,38 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./SearchBar.css";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState();
+  const [searchInput, setSearchInput] = useState("");
 
-  const onChangeHandler = (event) => {
-    event.preventDefault();
-    setSearchInput(event.target.value);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setSearchInput("")
+  }, [])
+
+  const onChangeHandler = ({ target: { value } }) => {
+    setSearchInput(value);
   };
   const onKeyPressHandler = ({ key }) => {
     if (key === "Enter") {
-      console.log("Search completed");
+      navigate(`/search/${searchInput}`);
     }
   };
   const searchHandler = () => {
-    console.log("Search completed");
+    navigate(`/search/${searchInput}`);
   };
-  console.log(searchInput, "searchInput");
   return (
     <div className="searchbar-container">
-        <input
-          type="text"
-          aria-label="search"
-          placeholder="Search your pokemon here"
-          onChange={onChangeHandler}
-          onKeyPress={onKeyPressHandler}
-        />
-        <FontAwesomeIcon
-          icon={faSearch}
-          className="search-icon"
-          onClick={searchHandler}
-        />
+      <input
+        type="text"
+        aria-label="search"
+        placeholder="Search your pokemon here"
+        onChange={onChangeHandler}
+        onKeyPress={onKeyPressHandler}
+        value={searchInput}
+      />
+      <FontAwesomeIcon
+        icon={faSearch}
+        className="search-icon"
+        onClick={searchHandler}
+      />
     </div>
   );
 };

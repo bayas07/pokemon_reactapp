@@ -9,7 +9,7 @@ const CardList = () => {
   if (loading) return <p className="center">loading...</p>;
   if (error) return <h4 className="center">Something Went Wrong</h4>;
   return (
-    <div className="pokemon-list">
+    <div className="card-list">
       <Card cardData={cardData} />
     </div>
   );
