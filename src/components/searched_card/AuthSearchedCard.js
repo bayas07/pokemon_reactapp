@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import Spinner from "../loading_spinner/Spinner";
 
 const AuthSearchedCard = ({ children }) => {
   const { pokemonName } = useParams();
@@ -28,7 +29,7 @@ const AuthSearchedCard = ({ children }) => {
     return (
       <h2 className="center">{`We couldn't find results for "${pokemonName}"`}</h2>
     );
-  if (loading) return <p className="center">loading...</p>;
+  if (loading) return <Spinner />;
   if (error) return <h2 className="center">Something Went Wrong</h2>;
 
   return children;
