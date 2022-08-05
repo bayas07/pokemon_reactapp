@@ -5,6 +5,8 @@ import Spinner from "../loading_spinner/Spinner";
 
 const AuthSearchedCard = ({ children }) => {
   const { pokemonName } = useParams();
+  console.log(pokemonName, "pokemonName")
+
   const dispatch = useDispatch();
 
   const searchTerm = pokemonName.trim().toLowerCase();
@@ -27,7 +29,7 @@ const AuthSearchedCard = ({ children }) => {
 
   if (emptyResults)
     return (
-      <h2 className="center">{`We couldn't find results for "${pokemonName}"`}</h2>
+      <h2 className="center">{`We couldn't find results for "${searchTerm}"`}</h2>
     );
   if (loading) return <Spinner />;
   if (error) return <h2 className="center">Something Went Wrong</h2>;

@@ -2,22 +2,19 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./SearchBar.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
-
+  const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setSearchInput("")
-  }, [])
-
   const onChangeHandler = ({ target: { value } }) => {
-    setSearchInput(value);
+    setSearchInput(value.toLowerCase());
   };
-  const onKeyPressHandler = ({ key }) => {
-    if (key === "Enter") {
+  const onKeyPressHandler = (event) => {
+    console.log(event, "event")
+    if (event.key === "Enter") {
       navigate(`/search/${searchInput}`);
     }
   };
