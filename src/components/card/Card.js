@@ -2,18 +2,21 @@ import React from "react";
 import "./Card.css";
 import CardStat from "./CardStat";
 
-const Card = ({ cardData, lastRef }) => {
+const Card = ({ cardData, lastRef, nextPage }) => {
   console.log(cardData, "cardData");
-  
+
   return cardData.map((card, index) => {
-    if (cardData.length === index + 1) {
+    if (nextPage !== null && cardData.length === index + 1) {
       return (
         <div className="card" key={card.id} ref={lastRef}>
           <div className={`card-item ${card.types[0].type.name}`}>
             <div
               className={`card-image-container ${card.types[0].type.name}-image-bg`}
             >
-              <img src={card.sprites.other["official-artwork"].front_default} alt={card.name} />
+              <img
+                src={card.sprites.other["official-artwork"].front_default}
+                alt={card.name}
+              />
             </div>
             <div className="card-index">#{card.id}</div>
             <div>{card.name}</div>
@@ -29,7 +32,10 @@ const Card = ({ cardData, lastRef }) => {
           <div
             className={`card-image-container ${card.types[0].type.name}-image-bg`}
           >
-            <img src={card.sprites.other["official-artwork"].front_default} alt={card.name}/>
+            <img
+              src={card.sprites.other["official-artwork"].front_default}
+              alt={card.name}
+            />
           </div>
           <div className="card-index">#{card.id}</div>
           <div>{card.name}</div>

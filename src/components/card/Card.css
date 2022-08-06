@@ -145,7 +145,6 @@
 .card-image-container img {
   width: 100%;
   position: relative;
-  animation: bounce 0.3s ease-out infinite;
 }
 .card-index {
   background-color: #6c7d73;
@@ -154,14 +153,3 @@
   border-radius: 8px;
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(1px);
-  }
-  50% {
-    transform: translateY(-2px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
