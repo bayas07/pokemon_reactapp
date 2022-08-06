@@ -23,9 +23,15 @@ const LoginComp = ({ onClose, setOverlay }) => {
     });
   }, []);
 
+  let setDataInLocal = (name, data) => {
+    let stringifiedData = JSON.stringify(data);
+    localStorage.setItem(name, stringifiedData);
+  };
+
   const handleCallbackResponse = (response) => {
     let userObject = jwtDecode(response.credential);
     dispatch(authSliceActions.setUserData(userObject));
+    setDataInLocal("userData", userObject);
     setOverlay(false);
   };
 

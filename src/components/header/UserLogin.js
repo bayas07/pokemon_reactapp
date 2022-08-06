@@ -12,6 +12,7 @@ const UserLogin = ({ onShow }) => {
 
   const signOutHandler = () => {
     dispatch(authSliceActions.setLogOut());
+    localStorage.removeItem("userData");
   };
 
   return (
