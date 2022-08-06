@@ -22,18 +22,18 @@ const CardList = () => {
       });
       if (node) observer.current.observe(node);
     },
-    [loading]
+    [loading, dispatch, nextPage]
   );
 
   let content;
   if (loading) content = <Spinner />;
   if (error) content = <h2 className="center">Something Went Wrong</h2>;
-  
+
   return (
     <Fragment>
       <div className="card-list">
         {cardData.length > 0 && (
-          <Card lastRef={lastItemRef} cardData={cardData} nextPage={nextPage}/>
+          <Card lastRef={lastItemRef} cardData={cardData} nextPage={nextPage} />
         )}
       </div>
       {content}

@@ -9,7 +9,6 @@ function* fetchSearchedCardData({ payload }) {
     );
     yield put(searchedCardSliceActions.fetchSuccess(results));
   } catch (err) {
-    console.log(err, "error");
     if (err.message.includes("Unexpected token")) {
       yield put(searchedCardSliceActions.setEmptyResults());
     } else if (err) {
@@ -19,7 +18,6 @@ function* fetchSearchedCardData({ payload }) {
 }
 
 const fetchCardData = async (url) => {
-  console.log(url, "fetchUrl");
   const responce = await fetch(url);
   const data = await responce.json();
   return data;

@@ -3,8 +3,6 @@ import "./Card.css";
 import CardStat from "./CardStat";
 
 const Card = ({ cardData, lastRef, nextPage }) => {
-  console.log(cardData, "cardData");
-
   return cardData.map((card, index) => {
     if (nextPage !== null && cardData.length === index + 1) {
       return (

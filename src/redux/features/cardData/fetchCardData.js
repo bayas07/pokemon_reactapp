@@ -6,8 +6,6 @@ function* fetchCardData({ payload }) {
     ? payload
     : "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0";
 
-  console.log(payload, "payload cardd");
-
   try {
     yield put(cardDataSliceActions.fetchStarted());
     const responce = yield fetch(fetchUrl);
