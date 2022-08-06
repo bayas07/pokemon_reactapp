@@ -1,7 +1,7 @@
 import "./Spinner.css";
-const Spinner = () => {
+const Spinner = ({styles}) => {
   return(
-    <div className="spinner"></div>
+    <div className="spinner" style={styles}></div>
   )
 }
 

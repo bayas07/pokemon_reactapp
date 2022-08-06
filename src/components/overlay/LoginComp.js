@@ -1,14 +1,42 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons"
-import React from "react";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { useSelector, useDispatch } from "react-redux";
+import jwtDecode from "jwt-decode";
+import React, { useEffect } from "react";
 import "./LoginComp.css";
+import { authSliceActions } from "../../redux/features/auth/authSlice";
 
+const LoginComp = ({ onClose, setOverlay }) => {
+  const dispatch = useDispatch();
+  const { clientId } = useSelector((data) => data.authData);
 
-const LoginComp = ({onClose}) => {
+  useEffect(() => {
+    /* global google */
+    google.accounts.id.initialize({
+      client_id: clientId,
+      callback: handleCallbackResponse,
+    });
+
+    google.accounts.id.renderButton(document.getElementById("sign-in"), {
+      theme: "outline",
+      size: "large",
+    });
+  }, []);
+
+  const handleCallbackResponse = (response) => {
+    let userObject = jwtDecode(response.credential);
+    dispatch(authSliceActions.setUserData(userObject));
+    setOverlay(false);
+  };
+
   return (
     <div className="content-overlay">
-      <div>Login With Google</div>
-      <FontAwesomeIcon icon={faClose} className="close-icon" onClick={onClose} />
+      <FontAwesomeIcon
+        icon={faClose}
+        className="close-icon"
+        onClick={onClose}
+      />
+      <div id="sign-in"></div>
     </div>
   );
 };

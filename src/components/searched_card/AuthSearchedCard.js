@@ -31,7 +31,7 @@ const AuthSearchedCard = ({ children }) => {
     return (
       <h2 className="center">{`We couldn't find results for "${searchTerm}"`}</h2>
     );
-  if (loading) return <Spinner />;
+  if (loading) return <Spinner styles={{marginTop: "10px"}}/>;
   if (error) return <h2 className="center">Something Went Wrong</h2>;
 
   return children;

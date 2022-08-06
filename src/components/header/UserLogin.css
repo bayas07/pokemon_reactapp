@@ -1,0 +1,50 @@
+.log-button {
+  font-size: 12px;
+  padding: 4px 12px;
+  color: #ffffff;
+  border-radius: 10px;
+  background: #1a73e8;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+  font-size: 14px;
+}
+.user-name-email {
+  display: none;
+}
+.user-image {
+  width: 30px;
+  border-radius: 50px;
+}
+
+@media screen and (min-width: 600px) {
+  .user-image {
+    width: 40px;
+  }
+  .log-button {
+    padding: 4px 20px;
+    font-size: 14px;
+  }
+  .user-profile {
+    gap: 0 10px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .user-name-email {
+    display: block;
+  }
+  .user-profile {
+    gap: 0 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .log-button {
+    font-size: 15px;
+  }
+}
