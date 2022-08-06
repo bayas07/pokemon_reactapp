@@ -1,0 +1,33 @@
+.content-overlay {
+  width: 20%;
+  min-width: 200px;
+  height: 100px;
+  padding: 10px 0;
+  background-color: #ffffff;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close-icon {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 2px 5px;
+  color: #000000;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+.close-icon:hover {
+ background: #000000; 
+ border-color: transparent;
+ color: #ffffff;
+ transition: 0.3s;
+}

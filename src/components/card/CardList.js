@@ -33,7 +33,7 @@ const CardList = () => {
     <Fragment>
       <div className="card-list">
         {cardData.length > 0 && (
-          <Card lastRef={lastItemRef} cardData={cardData} />
+          <Card lastRef={lastItemRef} cardData={cardData} nextPage={nextPage}/>
         )}
       </div>
       {content}

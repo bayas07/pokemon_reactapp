@@ -13,6 +13,16 @@ header {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+}
+.login-button {
+  padding: 4px 20px;
+  font-size: 14px;
+  color: #ffffff;
+  border-radius: 10px;
+  background: #1a73e8;
+  border: 1px solid transparent;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
@@ -21,6 +31,9 @@ header {
   }
   .header-inner {
     margin: 0 50px;
+  }
+  .login-button {
+    padding: 6px 25px;
   }
 }
 
