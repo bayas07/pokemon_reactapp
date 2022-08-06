@@ -12,6 +12,13 @@ const LoginComp = ({ onClose, setOverlay }) => {
 
   useEffect(() => {
     /* global google */
+    const handleCallbackResponse = (response) => {
+      let userObject = jwtDecode(response.credential);
+      dispatch(authSliceActions.setUserData(userObject));
+      setDataInLocal("userData", userObject);
+      setOverlay(false);
+    };
+
     google.accounts.id.initialize({
       client_id: clientId,
       callback: handleCallbackResponse,
@@ -21,18 +28,11 @@ const LoginComp = ({ onClose, setOverlay }) => {
       theme: "outline",
       size: "large",
     });
-  }, []);
+  }, [clientId, dispatch, setOverlay]);
 
   let setDataInLocal = (name, data) => {
     let stringifiedData = JSON.stringify(data);
     localStorage.setItem(name, stringifiedData);
-  };
-
-  const handleCallbackResponse = (response) => {
-    let userObject = jwtDecode(response.credential);
-    dispatch(authSliceActions.setUserData(userObject));
-    setDataInLocal("userData", userObject);
-    setOverlay(false);
   };
 
   return (
