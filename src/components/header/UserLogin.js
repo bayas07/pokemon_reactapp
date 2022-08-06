@@ -26,7 +26,7 @@ const UserLogin = ({ onShow }) => {
           <img
             src={picture}
             className="user-image"
-            alt={`${name}'s profile picture`}
+            alt={name}
           />
           <div className="user-name-email">
             <div>{name}</div>
